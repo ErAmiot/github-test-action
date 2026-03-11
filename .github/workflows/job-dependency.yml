@@ -1,4 +1,4 @@
-name: job-dependency.yml
+name: Avec Dependance
 on: workflow_dispatch
 
 jobs:

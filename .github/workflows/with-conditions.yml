@@ -1,0 +1,29 @@
+name: Avec Conditions
+on: [push,workflow_dispatch]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main'
+        steps:
+            - run: echo "Compilation"
+    test-on-develop:
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/develop'
+        steps:
+            - name: testing
+              run: echo "testing"
+            - name: test on push
+              if: github.event_name== 'push'
+              run: echo "Testing on push"
+
+    run-on-push:
+        runs-on: ubuntu-latest
+        if: github.event_name== 'push'
+        steps:
+            - run: echo "Deploying on push"
+    run-on-dispatch:
+        runs-on: ubuntu-latest
+        if: github.event_name== 'workflow_dispatch'
+        steps:
+            -   run: echo "Deploying on dispatch"

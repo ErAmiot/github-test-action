@@ -1,4 +1,4 @@
-name: with-inputs.yml
+name: Avec actions utilisateurs
 on:
     workflow_dispatch:
         inputs:
