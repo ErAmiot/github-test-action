@@ -1,12 +1,16 @@
 name: Avec des actions
 on: workflow_dispatch
+env:
+    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
     inspect-files:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v5
+
             - name: lister les fichiers
               run: ls -l
+
             - name: afficher le README
               run: cat README.md
