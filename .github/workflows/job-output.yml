@@ -9,7 +9,7 @@ jobs:
         steps:
             - name: set output2
               id: set-name
-              run: echo "output2=World >> $GITHUB_OUTPUT"
+              run: echo "output2=World" >> $GITHUB_OUTPUT
             - name: test output2
               run: echo "${{steps.set-name.outputs.output2}}"
 
