@@ -16,7 +16,7 @@ jobs:
             - name: user
               run: echo "Hello".$USER_NAME
             - name: app-name
-              run: echo $APP_Name
+              run: echo $APP_NAME
             - name: goodbye
               run: echo "Goodbye"
     second-job:
