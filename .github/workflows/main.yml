@@ -14,13 +14,15 @@ jobs:
                   APP_NAME: "My App Name"
               run: echo "Hello"
             - name: user
-              run: echo $USER_NAME
-            - name: appname
+              run: echo "Hello".$USER_NAME
+            - name: app-name
               run: echo $APP_Name
             - name: goodbye
               run: echo "Goodbye"
     second-job:
         runs-on: ubuntu-22.04
+        env:
+            BUILD_TYPE: "Debug"
         steps:
             - name: show_app_name
               run: echo $APP_NAME

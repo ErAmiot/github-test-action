@@ -1,0 +1,26 @@
+name: with-inputs.yml
+on:
+    workflow_dispatch:
+        inputs:
+            username:
+                description: "Who to greet"
+                required: true
+                default: 'World'
+            release-type:
+                description: 'Release type'
+                required: true
+                default: 'patch'
+                type: choice
+                options:
+                    - patch
+                    - minor
+                    - major
+
+jobs:
+    greetings:
+        runs-on: ubuntu-22.04
+        steps:
+        - name: rien
+          run: echo "Hello ${{github.event.inputs.username}}"
+        - name: show release type
+          run: echo "Release type ${{github.Event.inputs.release-type}}"
